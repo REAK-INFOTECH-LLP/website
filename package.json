@@ -1,0 +1,29 @@
+{
+  "name": "reak-website",
+  "version": "1.0.1",
+  "description": "Website for REAK INFOTECH LLP",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rm -rf build && postcss src/style/style.css -o src/static/assets/css/style.css && hugo --minify -s src -d ../build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/REAK-INFOTECH-LLP/website.git"
+  },
+  "keywords": [
+    "reak",
+    "website"
+  ],
+  "author": "REAK INFOTECH LLP",
+  "bugs": {
+    "url": "https://github.com/REAK-INFOTECH-LLP/website/issues"
+  },
+  "homepage": "https://github.com/REAK-INFOTECH-LLP/website#readme",
+  "dependencies": {
+    "autoprefixer": "^10.2.1",
+    "cssnano": "^4.1.10",
+    "postcss-cli": "^8.3.1",
+    "tailwindcss": "^2.0.2"
+  }
+}

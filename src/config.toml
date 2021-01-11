@@ -1,0 +1,30 @@
+baseURL = "https://reak.in"
+title = "REAK - Software Development Company"
+
+languageCode = "en-us"
+DefaultContentLanguage = "en"
+paginate = 12
+
+enableEmoji = true
+enableGitInfo = true
+enableRobotsTXT = true
+canonifyURLs = true
+
+[params]
+  author = "REAK INFOTECH LLP"
+  github = "https://github.com/REAK-INFOTECH-LLP"
+  facebook = "https://facebook.com/reakinfotech"
+  og_image = "/images/og.png"
+  sitename = "REAK - Software Development Company"
+  twitter = "@reakinfotech"
+
+[languages]
+  [languages.en]
+    languageName = "English"
+    languageCode = "en-us"
+    weight = 1
+
+  [languages.hi]
+    languageName = "Hindi"
+    languageCode = "hi"
+    weight = 2
