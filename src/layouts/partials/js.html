@@ -1,2 +1,19 @@
 <!-- Join Us Script -->
 <script defer src="assets/js/joinus.js"></script>
+
+<script>
+    window.onscroll = function() {showNavbar()};
+    var navbar = document.getElementById("navbar");
+    // 64px is the standard height of navbar
+    var sticky = window.innerHeight;
+
+    function showNavbar() {
+        if (window.pageYOffset >= sticky) {
+            navbar.classList.add("sticky");
+            navbar.classList.remove("navbar");
+        } else {
+            navbar.classList.remove("sticky");
+            navbar.classList.add("navbar");
+        }
+    }
+</script>
