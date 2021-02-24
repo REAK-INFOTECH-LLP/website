@@ -1,0 +1,19 @@
+.page-container {
+    padding: 45px 40px 0px 40px;
+}
+
+.navbar {
+    font-size: 2em;
+}
+
+.mid-text .h1 {
+    font-size: 5em;
+}
+
+.mid-text .h2 {
+    font-size: 1.8em;
+}
+
+.landing-footer {
+    background-image: url("../img/curve.svg");
+}
