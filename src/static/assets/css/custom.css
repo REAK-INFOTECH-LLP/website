@@ -3,7 +3,7 @@
 }
 
 .navbar {
-    font-size: 2em;
+    font-size: 1.6em;
 }
 
 .mid-text .h1 {
@@ -15,5 +15,9 @@
 }
 
 .landing-footer {
+    height: 100px;
+    width: 100%;
     background-image: url("../img/curve.svg");
+    background-size: auto;
+    background-repeat: no-repeat;
 }
