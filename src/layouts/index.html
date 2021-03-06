@@ -1,6 +1,6 @@
 {{ define "main" }}
-<div class="flex flex-col h-screen justify-between">
-    <header class="page-container">
+<div class="flex flex-col h-screen justify-between section">
+    <header id="navbar" class="page-container navbar">
         <div class="grid grid-cols-2 home-nav">
             <div class="logo self-center">
                 <img width="60%" src="assets/img/logo.svg" />
@@ -8,9 +8,13 @@
             <div class="navbar self-center">
                 <nav class="flex justify-around">
                     <a class="menu-item" href="#">Home</a>
+                    <div class="divider"></div>
                     <a class="menu-item" href="#">About</a>
+                    <div class="divider"></div>
                     <a class="menu-item" href="#">Projects</a>
+                    <div class="divider"></div>
                     <a class="menu-item" href="#">Careers</a>
+                    <div class="divider"></div>
                     <a class="menu-item" href="#">Contact</a>
                 </nav>
             </div>
@@ -26,6 +30,33 @@
             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Learn More</button>
             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Get a Quote</button>
         </div>
+    </main>
+    <footer class="landing-footer"></footer>
+</div>
+<div class="flex flex-col h-screen justify-between section">
+    <header id="navbar" class="page-container sticky">
+        <div class="grid grid-cols-2 home-nav">
+            <div class="logo self-center">
+                <img width="60%" src="assets/img/logo.svg" />
+            </div>
+            <div class="navbar self-center">
+                <nav class="flex justify-around">
+                    <a class="menu-item" href="#">Home</a>
+                    <div class="divider"></div>
+                    <a class="menu-item" href="#">About</a>
+                    <div class="divider"></div>
+                    <a class="menu-item" href="#">Projects</a>
+                    <div class="divider"></div>
+                    <a class="menu-item" href="#">Careers</a>
+                    <div class="divider"></div>
+                    <a class="menu-item" href="#">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <main class="page-container">
+        <h1 class="h1">Our Process</h1>
+        <img width="30%" src="assets/img/sample.svg" />
     </main>
     <footer class="landing-footer"></footer>
 </div>

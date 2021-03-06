@@ -5,9 +5,10 @@
     window.onscroll = function() {showNavbar()};
     var navbar = document.getElementById("navbar");
     // 64px is the standard height of navbar
-    var sticky = window.innerHeight;
+    var sticky = window.innerHeight/2;
 
     function showNavbar() {
+        /*
         if (window.pageYOffset >= sticky) {
             navbar.classList.add("sticky");
             navbar.classList.remove("navbar");
@@ -15,5 +16,15 @@
             navbar.classList.remove("sticky");
             navbar.classList.add("navbar");
         }
+        */
     }
+
+    new fullpage('#fullpage', {
+        //options here
+        autoScrolling:true,
+        scrollHorizontally: true
+    });
+
+    //methods
+    fullpage_api.setAllowScrolling(false);
 </script>

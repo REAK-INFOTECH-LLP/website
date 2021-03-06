@@ -2,8 +2,33 @@
     padding: 45px 40px 0px 40px;
 }
 
+.sticky {
+    /*position: fixed;
+    top: 0;*/
+    width: 100%;
+    padding: 20px;
+    border-style: solid;
+    border-color: grey;
+    border-width: 0 0 5px 0;
+    background-color: white;
+}
+
+.sticky img {
+    width: 30%;
+}
+
+.page-body {
+    margin-top: 0;
+}
+
 .navbar {
     font-size: 1.6em;
+}
+
+.divider {
+    width: 3px;
+    height: 1.7em;
+    background-color: red;
 }
 
 .mid-text .h1 {
@@ -15,9 +40,16 @@
 }
 
 .landing-footer {
-    height: 100px;
+    height: 150px;
     width: 100%;
     background-image: url("../img/curve.svg");
-    background-size: auto;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
+}
+
+
+.partners {
+    height: 30%;
+    width: 100%;
+    background-color: red;
 }
