@@ -1,0 +1,24 @@
+  <defs>
+    <linearGradient id="reak" y2="0%" x2="100%" y1="0%" x1="0%">
+        <stop stop-color="#00FF00" offset="0%" id="F1gst1"/>
+        <stop stop-color="#FFFFFF" offset="0%" id="F1gst2"/>
+    </linearGradient>
+  </defs>
+
+<script>
+    var firstStop = document.getElementById('F1gst1');
+    var i = 1;
+    var processAnimation = setInterval(function(){
+            console.log("run");
+            if(i<=100){
+                percentage = i+'%'; firstStop.setAttribute('offset',percentage);
+                if(i>=10){
+                    let bulb = document.getElementById('bulb');
+                    bulb.style.fill = "#ffff00"
+                }
+                i = i + 0.25;
+            } else {
+                clearInterval(processAnimation);
+            }
+    }, 10);
+</script>
