@@ -13,6 +13,16 @@
     background-color: white;
 }
 
+.sticky_one{
+    width: 100%;
+    padding-top: 0px;
+    padding-left: 20px;
+    border-style: solid;
+    border-color: grey;
+    border-width: 0 0 2px 0;
+    background-color: white; 
+}
+
 .sticky img {
     width: 30%;
 }
@@ -52,4 +62,8 @@
     height: 30%;
     width: 100%;
     background-color: red;
+}
+
+.head_color{
+    color:#24b7d7;
 }
