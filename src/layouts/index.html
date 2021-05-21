@@ -59,15 +59,126 @@
             <h1 class="h2 head_color"><strong>Latest Projects</strong></h1>
         </div>
     </main>
-    <!-- <main class="page-container">
-        <img width="40%" src="assets/img/sample.svg" />
-        <img width="0%" src="assets/img/sample.svg" />
-        
-    </main> -->
     <div class="grid grid-cols-2 gap-1">
         <div class="col-span-1"><img  class="img_size" src="assets/img/champ.jpg" /></div>
         <div class="col-span-1"><img  class="img_size" src="assets/img/champ.jpg" /></div>
         <div class="col-span-1"><img  class="img_size" src="assets/img/champ.jpg" /></div>
+        <div class="col-span-1"><img  class="img_size" src="assets/img/champ.jpg" /></div>
+
+      </div>
+    <footer class="landing-footer"></footer>
+</div>
+<div class="flex flex-col h-screen justify-between section">
+    <header id="navbar" class="page-container sticky">
+        <div class="grid grid-cols-2 home-nav">
+            <div class="logo self-center">
+                <img width="60%" src="assets/img/logo.svg" />
+            </div>
+            <div class="navbar self-center">
+                <nav class="flex justify-around">
+                    <a class="menu-item" href="#">Home</a>
+                    <div class="divider"></div>
+                    <a class="menu-item" href="#">About</a>
+                    <div class="divider"></div>
+                    <a class="menu-item" href="#">Projects</a>
+                    <div class="divider"></div>
+                    <a class="menu-item" href="#">Careers</a>
+                    <div class="divider"></div>
+                    <a class="menu-item" href="#">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <main class="page-container">
+        <div class="mid-text">
+            <h1 class="h2 head_color"><strong>Get a Quote !</strong></h1>
+        </div>
+    </main>
+    <div class="grid grid-cols-2 gap-1 divide-x-4 ">
+        <div class="col-span-1 pl-28 ">
+            <form action="">
+            <div class="grid grid-cols-2 gap-1">
+                <div class="col-span-1">
+               
+                <div class="flex flex-wrap -mx-3 mb-6">
+                    <div class="w-full md:w-2/3 px-3 mb-6 md:mb-0">
+                      <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
+                         Name
+                      </label>
+                      <input class="appearance-none block w-full bg-gray-200 text-gray-700  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="Jane">
+                     
+                    </div>
+    
+                  </div>
+                  <div class="flex flex-wrap -mx-3 mb-6">
+                  <div class="w-full md:w-2/3 px-3 mb-6 md:mb-0">
+                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
+                      Type of Project
+                    </label>
+                    <div class="relative">
+                      <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
+                        <option>Default Select</option>
+                        <option>Missouri</option>
+                        <option>Texas</option>
+                      </select>
+                      <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex flex-wrap -mx-3 mb-6">
+                    <div class="w-full md:w-2/3 px-3 mb-6 md:mb-0">
+                      <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
+                        Example Textarea
+                      </label>
+                      <div class="relative">
+                        <textarea class="resize-y border rounded-md w-full"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-span-1">
+                    
+                    <div class="flex flex-wrap -mx-3 mb-6">
+                        <div class="w-full md:w-2/3 px-3 mb-6 md:mb-0">
+                          <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
+                             Email
+                          </label>
+                          <input class="appearance-none block w-full bg-gray-200 text-gray-700  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="Jane">
+                          
+                        </div>
+                        
+                      </div>
+                      <div class="flex flex-wrap -mx-3 mb-6">
+                      <div class="w-full md:w-2/3 px-3 mb-6 md:mb-0">
+                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
+                            Business Type
+                        </label>
+                        <div class="relative">
+                          <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
+                            <option>Default Select</option>
+                            <option>Missouri</option>
+                            <option>Texas</option>
+                          </select>
+                          <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                          </div>
+                        </div>
+                      </div>
+                      </div>
+                      <div class="flex flex-wrap -mx-3 mb-6 pt-8 pl-4 gap-4">
+                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                            Button
+                          </button>
+                          <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                            Button
+                          </button>
+                      </div>
+                </div>
+            </div>
+        </form>
+        </div>
         <div class="col-span-1"><img  class="img_size" src="assets/img/champ.jpg" /></div>
 
       </div>
