@@ -34,6 +34,166 @@
     <footer class="landing-footer"></footer>
 </div>
 <div class="flex flex-col h-screen justify-between section">
+  <header id="navbar" class="page-container sticky">
+      <div class="grid grid-cols-2 home-nav">
+          <div class="logo self-center">
+              <img width="60%" src="assets/img/logo.svg" />
+          </div>
+          <div class="navbar self-center">
+              <nav class="flex justify-around">
+                  <a class="menu-item" href="#">Home</a>
+                  <div class="divider"></div>
+                  <a class="menu-item" href="#">About</a>
+                  <div class="divider"></div>
+                  <a class="menu-item" href="#">Projects</a>
+                  <div class="divider"></div>
+                  <a class="menu-item" href="#">Careers</a>
+                  <div class="divider"></div>
+                  <a class="menu-item" href="#">Contact</a>
+              </nav>
+          </div>
+      </div>
+  </header>
+ 
+  <div class="grid grid-cols-2 gap-1 divide-x-4 ">
+      <div class="col-span-1 pl-28 ">
+          <div class="mid-text">
+              <h1 class="h2 head_color"><strong>Get a Quote !</strong></h1>
+              <h1 class="h2 head_color">or simply say hello !</h1>
+          </div>
+            <form action="" class="pt-9">
+          <div class="grid grid-cols-2 gap-1 pt-2">
+              <div class="col-span-1">
+               
+              <div class="flex flex-wrap -mx-3 mb-6">
+                  <div class="w-full md:w-2/3 px-3 mb-6 md:mb-0">
+                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
+                       Name
+                    </label>
+                    <input class="appearance-none block w-full bg-gray-200 text-gray-700  rounded py-3 px-4 mb-3 leading-tight focus:outline focus:bg-white" id="grid-first-name" type="text" placeholder="Enter Name">
+                   
+                  </div>
+  
+                </div>
+                <div class="flex flex-wrap -mx-3 mb-6">
+                <div class="w-full md:w-2/3 px-3 mb-6 md:mb-0">
+                  <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
+                    Type of Project
+                  </label>
+                  <div class="relative">
+                    <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
+                      <option>Default Select</option>
+                      <option>Missouri</option>
+                      <option>Texas</option>
+                    </select>
+                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                      <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="flex flex-wrap -mx-3 mb-6">
+                  <div class="w-full md:w-2/3 px-3 mb-6 md:mb-0">
+                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
+                      Example Textarea
+                    </label>
+                    <div class="relative">
+                      <textarea class="resize-y border rounded-md w-full"></textarea>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-span-1 ">
+                  
+                  <div class="flex flex-wrap -mx-3 mb-6">
+                      <div class="w-full md:w-2/3 px-3 mb-6 md:mb-0">
+                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
+                           Email
+                        </label>
+                        <input class="appearance-none block w-full bg-gray-200 text-gray-700  rounded py-3 px-4 mb-3 leading-tight focus:outline focus:bg-white" id="grid-first-name" type="text" placeholder="Enter Email">
+                        
+                      </div>
+                      
+                    </div>
+                    <div class="flex flex-wrap -mx-3 mb-6">
+                    <div class="w-full md:w-2/3 px-3 mb-6 md:mb-0">
+                      <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
+                          Business Type
+                      </label>
+                      <div class="relative">
+                        <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
+                          <option>Default Select</option>
+                          <option>Missouri</option>
+                          <option>Texas</option>
+                        </select>
+                        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                          <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                        </div>
+                      </div>
+                    </div>
+                    </div>
+                    <div class="flex flex-wrap -mx-3 mb-6 pt-8 pl-4 gap-4">
+                      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                          Submit
+                        </button>
+                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                          Reset
+                        </button>
+                    </div>
+              </div>
+          </div>
+      </form>
+      </div>
+      <div class="col-span-1 pl-2"><div class="mapouter"><div class="gmap_canvas"><iframe width="925" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=Jabalpur%20&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://2piratebay.org">pirate bay</a><br><style>.mapouter{position:relative;text-align:right;height:500px;width:1080px;}</style><a href="https://www.embedgooglemap.net">embedgooglemap.net</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:1030px;}</style></div></div>
+      </div>
+
+    </div>
+    <div class="bg-color h-full">
+      <div class=" text-white">
+          <div>
+              
+              
+              
+                <div class="text-8xl">
+                  
+                  <span><i class="devicon-html5-plain-wordmark"></i></span>
+                  <span class="inline-block relative right-40"><i class="fab fa-react"></i></span>
+                  <span ><i class="devicon-typescript-plain mix-blend-normal"></i></span>
+                  <span ><i class="devicon-nodejs-plain-wordmark "></i></span>
+                  <span ><i class="devicon-css3-plain-wordmark"></i></span>
+                  <span class="inline-block relative left-36"><i class="devicon-amazonwebservices-plain-wordmark text-8xl"></i></span>
+                  <h1 class="text-3xl  inline-block relative bottom-20 border-4">Our Partners in Crime</h1>
+                  <span class="inline-block relative right-48"><i class="devicon-git-plain-wordmark"></i></span>
+                  <span class="inline-block relative right-40"><i class="devicon-googlecloud-plain-wordmark "></i></span>
+                  <span class="inline-block relative right-40"><i class="devicon-kotlin-plain-wordmark"></i></span>
+                  <span class="inline-block relative right-40"><i class="devicon-python-plain-wordmark text-8xl"></i></span>
+                  <span class="p-2 "><i class="devicon-vim-plain text-9xl"></i></span>
+                  <span ><i class="devicon-nginx-original"></i></span>
+                  <span ><i class="devicon-apple-original"></i></span>
+                </div>
+                <div class="text-8xl">
+                 
+                  <span class="p-2 ml-8"><i class="devicon-javascript-plain"></i></span>
+                  <span ><i class="devicon-sass-original"></i></span>
+                  <span class="p-2 mt-4"><i class="devicon-cplusplus-plain text-9xl"></i></span>
+                  <span  class="p-10 text-9xl"><i class="devicon-angularjs-plain-wordmark"></i></span>
+                  <span ><i class="devicon-docker-plain-wordmark"></i></span>
+                  <span ><i class="devicon-kubernetes-plain-wordmark"></i></span>
+                  <span ><i class="devicon-go-plain text-9xl"></i></span>
+                  <span ><i class="devicon-objectivec-plain"></i></span>
+                  <span ><i class="devicon-ubuntu-plain-wordmark text-9xl"></i></span>
+                  <span ><i class="devicon-mongodb-plain-wordmark"></i></span>
+                  <span ><i class="devicon-android-plain-wordmark"></i></span>
+                  <span ><i class="devicon-mysql-plain-wordmark"></i></span>
+                  <span ><i class="devicon-php-plain"></i></span>
+
+                
+                </div>
+              
+          </div>
+         
+     </div>
+<div class="flex flex-col h-screen justify-between section">
     <header id="navbar" class="page-container sticky">
         <div class="grid grid-cols-2 home-nav">
             <div class="logo self-center">
