@@ -2,7 +2,7 @@
 <div class="flex flex-col md:h-screen justify-between section">
     <nav class="md:pt-12">
   <div class="max-w-full mx-auto px-2 sm:px-6 lg:px-8">
-    <div class="relative flex items-center justify-between h-20">
+    <div class="relative flex items-center justify-between h-20 ">
       <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
         <!-- Mobile menu button-->
         <button type="button" id="toggle" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
@@ -117,7 +117,7 @@
     </main>
     <footer class="landing-footer"></footer>
 </div>
-<div class="flex md:flex-col md:h-screen justify-between section">
+<div class="flex md:flex-col justify-between section">
   <header id="navbar" class="page-container sticky  xs:invisible md:visible" >
       <div class="grid grid-cols-2 home-nav">
           <div class="logo self-center">
@@ -139,7 +139,7 @@
       </div>
   </header>
  
-  <div class="grid md:grid-cols-2 xs:h-screen gap-1 md:divide-x-4 ">
+  <div class="grid md:grid-cols-2 gap-1 md:divide-x-4">
       <div class="col-span-1 md:pl-28">
           <div class="mid-text xs:pt-8">
               <h1 class="h2 head_color"><strong>Get a Quote !</strong></h1>
@@ -227,13 +227,13 @@
           </div>
       </form>
       </div>
-      <div class="col-span-1 pl-2"><div class="mapouter"><div class="gmap_canvas"><iframe class="xs:w-60" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=Jabalpur%20&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://2piratebay.org">pirate bay</a><br><style>.mapouter{position:relative;text-align:right;height:500px;width:1080px;}</style><a href="https://www.embedgooglemap.net">embedgooglemap.net</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:1030px;}</style></div></div>
+      <div class="col-span-1 xs:-mx-8  md:pl-8 pt-4 md:pb-4"><div class="mapouter"><div class="gmap_canvas"><iframe class="md:w-10/12 xs:w-1/3 h-full" id="gmap_canvas" src="https://maps.google.com/maps?q=Jabalpur%20&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://2piratebay.org">pirate bay</a><br><style>.mapouter{position:relative;text-align:right;height:500px;width:1080px;}</style><a href="https://www.embedgooglemap.net">embedgooglemap.net</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:1030px;}</style></div></div>
       </div>
 
     </div>
     <div class="bg-color h-full">
       <div class="text-white">
-        <div>
+        <div class="whitespace-nowrap">
             
             
             
@@ -314,7 +314,7 @@
       </div>
     <footer class="landing-footer"></footer>
 </div>
-<div class="flex flex-col h-screen justify-between section">
+<div class="flex md:flex-col h-screen justify-between section">
     <header id="navbar" class="page-container sticky">
         <div class="grid grid-cols-2 home-nav">
             <div class="logo self-center">
@@ -336,99 +336,98 @@
         </div>
     </header>
    
-    <div class="grid grid-cols-2 gap-1 divide-x-4 ">
-        <div class="col-span-1 pl-28 ">
-            <div class="mid-text">
-                <h1 class="h2 head_color"><strong>Get a Quote !</strong></h1>
-                <h1 class="h2 head_color">or simply say hello !</h1>
-            </div>
-              <form action="" class="pt-9">
-            <div class="grid grid-cols-2 gap-1 pt-2">
-                <div class="col-span-1">
-                 
-                <div class="flex flex-wrap -mx-3 mb-6">
-                    <div class="w-full md:w-2/3 px-3 mb-6 md:mb-0">
-                      <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
-                         Name
-                      </label>
-                      <input class="appearance-none block w-full bg-gray-200 text-gray-700  rounded py-3 px-4 mb-3 leading-tight focus:outline focus:bg-white" id="grid-first-name" type="text" placeholder="Enter Name">
-                     
-                    </div>
-    
+    <div class="grid md:grid-cols-2 gap-1 md:divide-x-4">
+      <div class="col-span-1 md:pl-28">
+          <div class="mid-text xs:pt-8">
+              <h1 class="h2 head_color"><strong>Get a Quote !</strong></h1>
+              <h1 class="h2 head_color">or simply say hello !</h1>
+          </div>
+            <form action="" class="pt-9">
+          <div class="grid md:grid-cols-2 gap-1 md:pt-2">
+              <div class="col-span-1">
+               
+              <div class="flex md:flex-wrap xs:-mx-5 md:-mx-0 md:mb-6">
+                  <div class="xs:w-80 md:w-2/3  mb-6 md:mb-0">
+                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
+                       Name
+                    </label>
+                    <input class="appearance-none block w-full bg-gray-200 text-gray-700  rounded py-3 px-4 leading-tight focus:outline focus:bg-white" id="grid-first-name" type="text" placeholder="Enter Name">
+                   
                   </div>
-                  <div class="flex flex-wrap -mx-3 mb-6">
-                  <div class="w-full md:w-2/3 px-3 mb-6 md:mb-0">
+  
+                </div>
+                <div class="flex md:flex-wrap xs:-mx-5 md:-mx-0 md:mb-6">
+                <div class="xs:w-80 md:w-2/3  mb-6 md:mb-0">
+                  <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
+                    Type of Project
+                  </label>
+                  <div class="relative">
+                    <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
+                      <option>Default Select</option>
+                      <option>Missouri</option>
+                      <option>Texas</option>
+                    </select>
+                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                      <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="flex md:flex-wrap xs:-mx-5 md:-mx-0 md:mb-6">
+                  <div class="xs:w-80 md:w-2/3  mb-6 md:mb-0">
                     <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
-                      Type of Project
+                      Example Textarea
                     </label>
                     <div class="relative">
-                      <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
-                        <option>Default Select</option>
-                        <option>Missouri</option>
-                        <option>Texas</option>
-                      </select>
-                      <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
-                      </div>
+                      <textarea class="resize-y border rounded-md w-full "></textarea>
                     </div>
                   </div>
                 </div>
-                <div class="flex flex-wrap -mx-3 mb-6">
-                    <div class="w-full md:w-2/3 px-3 mb-6 md:mb-0">
-                      <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
-                        Example Textarea
-                      </label>
-                      <div class="relative">
-                        <textarea class="resize-y border rounded-md w-full"></textarea>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-span-1 ">
-                    
-                    <div class="flex flex-wrap -mx-3 mb-6">
-                        <div class="w-full md:w-2/3 px-3 mb-6 md:mb-0">
-                          <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
-                             Email
-                          </label>
-                          <input class="appearance-none block w-full bg-gray-200 text-gray-700  rounded py-3 px-4 mb-3 leading-tight focus:outline focus:bg-white" id="grid-first-name" type="text" placeholder="Enter Email">
-                          
-                        </div>
+              </div>
+              <div class="col-span-1">    
+                  <div class="flex md:flex-wrap xs:-mx-5 xs:-my-3 md:-mx-0 md:mb-6">
+                      <div class="xs:w-6/7  md:w-2/3  mb-6 md:mb-0">
+                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
+                           Email
+                        </label>
+                        <input class="appearance-none block xs:w-4/12 md:w-full bg-gray-200 text-gray-700  rounded py-3 px-4 mb-3 leading-tight focus:outline focus:bg-white" id="grid-first-name" type="text" placeholder="Enter Email">
                         
                       </div>
-                      <div class="flex flex-wrap -mx-3 mb-6">
-                      <div class="w-full md:w-2/3 px-3 mb-6 md:mb-0">
-                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
-                            Business Type
-                        </label>
-                        <div class="relative">
-                          <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
-                            <option>Default Select</option>
-                            <option>Missouri</option>
-                            <option>Texas</option>
-                          </select>
-                          <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
-                          </div>
+                      
+                    </div>
+                    <div class="flex md:flex-wrap xs:-mx-5 xs:-my-3 md:-mx-0 md:mb-6">
+                    <div class="xs:w-80 md:w-2/3  mb-6 md:mb-0">
+                      <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
+                          Business Type
+                      </label>
+                      <div class="relative">
+                        <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
+                          <option>Default Select</option>
+                          <option>Missouri</option>
+                          <option>Texas</option>
+                        </select>
+                        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                          <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
                         </div>
                       </div>
-                      </div>
-                      <div class="flex flex-wrap -mx-3 mb-6 pt-8 pl-4 gap-4">
-                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                            Submit
-                          </button>
-                          <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                            Reset
-                          </button>
-                      </div>
-                </div>
-            </div>
-        </form>
-        </div>
-        <div class="col-span-1 pl-2"><div class="mapouter"><div class="gmap_canvas"><iframe width="925" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=Jabalpur%20&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://2piratebay.org">pirate bay</a><br><style>.mapouter{position:relative;text-align:right;height:500px;width:1080px;}</style><a href="https://www.embedgooglemap.net">embedgooglemap.net</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:1030px;}</style></div></div>
-        </div>
-
+                    </div>
+                    </div>
+                    <div class="flex md:flex-wrap xs:-mx-5 xs:pt-6 md:-mx-0 md:mb-6  md:pt-8  gap-4">
+                      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 md:w-2/5  px-4 rounded">
+                          Submit
+                        </button>
+                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 md:w-2/5 rounded">
+                          Reset
+                        </button>
+                    </div>
+              </div>
+          </div>
+      </form>
       </div>
+      <div class="col-span-1 pl-8 pt-4 pb-4"><div class="mapouter"><div class="gmap_canvas"><iframe class="md:w-10/12 h-full" id="gmap_canvas" src="https://maps.google.com/maps?q=Jabalpur%20&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://2piratebay.org">pirate bay</a><br><style>.mapouter{position:relative;text-align:right;height:500px;width:1080px;}</style><a href="https://www.embedgooglemap.net">embedgooglemap.net</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:1030px;}</style></div></div>
+      </div>
+
+    </div>
       <div class="bg-color h-full">
         <div class="grid grid-cols-4  p-12 text-jsutify text-white  divide-x divide-white">
             <div>
