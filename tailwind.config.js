@@ -12,7 +12,13 @@ module.exports = {
             'xs': '310px',
             ...defaultTheme.screens,
           },
-        extend: {},
+        extend: {
+            width: {
+               
+                '6/7': '85.7142857%',
+              }
+       
+        },
     variants: {},
     plugins: [],
 }}
