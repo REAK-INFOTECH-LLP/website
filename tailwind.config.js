@@ -9,7 +9,7 @@ module.exports = {
     darkMode: false, // or 'media' or 'class'
     theme: {
         screens: {
-            'xs':{'min': '310px', 'max': '768px'}
+            'xs':'310px'
             ,
             ...defaultTheme.screens,
           },
@@ -17,7 +17,8 @@ module.exports = {
             width: {
                
                 '6/7': '87%',
-                 '8/7' :'90%'
+                 '8/7' :'90%',
+                 'w-screen' :'94vw'
               }
        
         },
