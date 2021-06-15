@@ -1,7 +1,7 @@
 {{ define "main" }}
-<div class="">
-  <div class="flex flex-col md:h-screen justify-between section">
-    <nav class="md:pt-12">
+<div class="overflow-x-hidden lg:overflow-x-visible">
+  <div class="flex flex-col lg:h-screen justify-between section">
+    <nav class="lg:pt-12">
       <div class="max-w-full mx-auto px-2 sm:px-6 lg:px-8">
         <div class="relative flex items-center justify-between h-20 ">
           <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -41,7 +41,7 @@
 
             </div>
             <div class="hidden sm:block sm:ml-6 absolute right-20 pt-6">
-              <div class="flex space-x-6 sm:text-sm md:text-xl lg:text-3xl text-black md:pt-4">
+              <div class="flex space-x-6 sm:text-sm lg:text-xl lg:text-3xl text-black lg:pt-4">
                 <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                 <a class="menu-item" href="#">Home</a>
                 <div class="divider"></div>
@@ -127,8 +127,8 @@
     </main>
     <footer class="landing-footer"></footer>
   </div>
-  <div class="md:flex md:flex-col md:h-screen justify-between section">
-    <header id="navbar" class="page-container sticky xs:invisible md:visible">
+  <div class="lg:flex lg:flex-col lg:h-screen justify-between section">
+    <header id="navbar" class="page-container sticky invisible lg:visible">
       <div class="grid grid-cols-2 home-nav">
         <div class="logo self-center">
           <img width="60%" src="assets/img/logo.svg" />
@@ -149,18 +149,18 @@
       </div>
     </header>
 
-    <div class="grid md:grid-cols-2 gap-1 md:divide-x-4">
-      <div class="col-span-1 md:pl-28">
-        <div class="mid-text  xs:mx-5">
+    <div class="grid lg:grid-cols-2 gap-1 lg:divide-x-4">
+      <div class="col-span-1 lg:pl-28">
+        <div class="mid-text  xs:mx-3">
           <h1 class="h2 head_color"><strong>Get a Quote !</strong></h1>
           <h1 class="h2 head_color">or simply say hello !</h1>
         </div>
         <form action="" class="pt-9">
-          <div class="grid md:grid-cols-2 gap-1 md:pt-2">
+          <div class="grid lg:grid-cols-2 gap-1 lg:pt-2">
             <div class="col-span-1">
 
-              <div class="flex md:flex-wrap xs:mx-5 md:-mx-0 md:mb-6">
-                <div class="xs:w-w-screen md:w-2/3  mb-6 md:mb-0">
+              <div class="flex lg:flex-wrap xs:mx-3 lg:-mx-0 lg:mb-6">
+                <div class="xs:w-w-screen lg:w-2/3  mb-6 lg:mb-0">
                   <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                     for="grid-first-name">
                     Name
@@ -172,8 +172,8 @@
                 </div>
 
               </div>
-              <div class="flex md:flex-wrap xs:mx-5 md:-mx-0 md:mb-6">
-                <div class="xs:w-w-screen md:w-2/3  mb-6 md:mb-0">
+              <div class="flex lg:flex-wrap xs:mx-3 lg:-mx-0 lg:mb-6">
+                <div class="xs:w-w-screen lg:w-2/3  mb-6 lg:mb-0">
                   <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
                     Type of Project
                   </label>
@@ -193,8 +193,8 @@
                   </div>
                 </div>
               </div>
-              <div class="flex md:flex-wrap xs:mx-5 md:-mx-0 md:mb-6">
-                <div class="xs:w-w-screen md:w-2/3  mb-6 md:mb-0">
+              <div class="flex lg:flex-wrap xs:mx-3 lg:-mx-0 lg:mb-6">
+                <div class="xs:w-w-screen lg:w-2/3  mb-6 lg:mb-0">
                   <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
                     Example Textarea
                   </label>
@@ -205,8 +205,8 @@
               </div>
             </div>
             <div class="col-span-1">
-              <div class="flex md:flex-wrap xs:mx-5 md:-mx-0 md:mb-6">
-                <div class="xs:w-w-screen md:w-2/3  mb-6 md:mb-0">
+              <div class="flex lg:flex-wrap xs:mx-3 lg:-mx-0 lg:mb-6">
+                <div class="xs:w-w-screen lg:w-2/3  mb-6 lg:mb-0">
                   <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                     for="grid-first-name">
                     Email
@@ -219,8 +219,8 @@
 
               </div>
              
-              <div class="flex md:flex-wrap xs:mx-5 xs:-my-3 md:-mx-0 md:mb-6">
-                <div class="xs:w-w-screen md:w-2/3  mb-6 md:mb-0">
+              <div class="flex lg:flex-wrap xs:mx-3 xs:-my-3 lg:-mx-0 lg:mb-6">
+                <div class="xs:w-w-screen lg:w-2/3  mb-6 lg:mb-0">
                   <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
                     Business Type
                   </label>
@@ -240,11 +240,11 @@
                   </div>
                 </div>
               </div>
-              <div class="flex md:flex-wrap xs:mx-5 xs:pt-6 md:-mx-0 md:mb-6  md:pt-8  gap-4">
-                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 md:w-2/5  px-4 rounded">
+              <div class="flex lg:flex-wrap xs:mx-3 xs:pt-6 lg:-mx-0 lg:mb-6  lg:pt-8  gap-4">
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 lg:w-2/5  px-4 rounded">
                   Submit
                 </button>
-                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 md:w-2/5 rounded">
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 lg:w-2/5 rounded">
                   Reset
                 </button>
               </div>
@@ -252,9 +252,9 @@
           </div>
         </form>
       </div>
-      <div class="col-span-1 xs:mx-3 mb-4 md:pl-8 pt-4 ">
+      <div class="col-span-1 xs:mx-3 mb-4 lg:pl-8 pt-4 ">
         <div class="mapouter">
-          <div class="gmap_canvas"><iframe class="md:w-10/12 xs:w-w-screen h-full" id="gmap_canvas"
+          <div class="gmap_canvas"><iframe class="lg:w-10/12 xs:w-w-screen h-full" id="gmap_canvas"
               src="https://maps.google.com/maps?q=Jabalpur%20&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
               scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://2piratebay.org">pirate
               bay</a><br>
@@ -285,66 +285,66 @@
 
 
 
-          <div class="md:text-8xl xs:text-7xl">
+          <div class="lg:text-8xl xs:text-7xl">
 
-            <span class="inline-block relative md:left-5 xs:top-28 md:top-0"><i
+            <span class="inline-block relative lg:left-5 xs:top-28 lg:top-0"><i
                 class="devicon-html5-plain-wordmark"></i></span>
-            <span class="inline-block relative md:bottom-8 md:left-5 xs:top-16 md:top-0"><i
+            <span class="inline-block relative lg:bottom-8 lg:left-5 xs:top-16 lg:top-0"><i
                 class="fab fa-react"></i></span>
-            <span class="inline-block relative md:top-7 md:left-8 xs:top-24 md:top-0 "><i
+            <span class="inline-block relative lg:top-7 lg:left-8 xs:top-24 lg:top-0 "><i
                 class="devicon-typescript-plain mix-blend-normal"></i></span>
-            <span class="inline-block relative md:left-12 xs:top-16 md:top-0 "><i
+            <span class="inline-block relative lg:left-12 xs:top-16 lg:top-0 "><i
                 class="devicon-nodejs-plain-wordmark "></i></span>
-            <span class="inline-block relative md:left-12 xs:top-14 xs:left-72 md:top-0"><i
+            <span class="inline-block relative lg:left-12 xs:top-14 xs:left-72 lg:top-0"><i
                 class="devicon-css3-plain-wordmark"></i></span>
-            <span class="inline-block relative md:left-12 xs:top-16 md:top-0"><i
+            <span class="inline-block relative lg:left-12 xs:top-16 lg:top-0"><i
                 class="devicon-amazonwebservices-plain-wordmark "></i></span>
-            <h1 class="text-3xl inline-block relative md:bottom-20 md:left-24 border-4 h-12 xs:bottom-40 xs:left-6">Our
+            <h1 class="text-3xl inline-block relative lg:bottom-20 lg:left-24 border-4 h-12 xs:bottom-40 xs:left-6">Our
               Partners in Crime</h1>
-            <span class="inline-block relative md:right-60 xs:bottom-16 md:bottom-0"><i
+            <span class="inline-block relative lg:right-60 xs:bottom-16 lg:bottom-0"><i
                 class="devicon-git-plain-wordmark"></i></span>
-            <span class="inline-block relative md:right-52 top-2"><i
+            <span class="inline-block relative lg:right-52 top-2"><i
                 class="devicon-googlecloud-plain-wordmark "></i></span>
-            <span class="inline-block relative md:right-48 xs:bottom-16 md:bottom-0"><i
+            <span class="inline-block relative lg:right-48 xs:bottom-16 lg:bottom-0"><i
                 class="devicon-kotlin-plain-wordmark"></i></span>
-            <span class="inline-block relative md:right-40 xs:top-4 md:top-0"><i
-                class="devicon-python-plain-wordmark md:text-9xl"></i></span>
-            <span class="inline-block relative md:right-32 xs:bottom-16 md:bottom-0"><i
-                class="devicon-vim-plain md:text-9xl"></i></span>
-            <span class="inline-block relative md:right-20 md:bottom-8"><i class="devicon-nginx-original"></i></span>
-            <span class="inline-block xs:relative md:absolute md:right-4 xs:bottom-16"><i class="devicon-apple-original"></i></span>
+            <span class="inline-block relative lg:right-40 xs:top-4 lg:top-0"><i
+                class="devicon-python-plain-wordmark lg:text-9xl"></i></span>
+            <span class="inline-block relative lg:right-32 xs:bottom-16 lg:bottom-0"><i
+                class="devicon-vim-plain lg:text-9xl"></i></span>
+            <span class="inline-block relative lg:right-20 lg:bottom-8"><i class="devicon-nginx-original"></i></span>
+            <span class="inline-block xs:relative lg:absolute lg:right-4 xs:bottom-16"><i class="devicon-apple-original"></i></span>
           </div>
-          <div class="md:text-8xl xs:text-7xl">
-            <span class="inline-block relative md:left-5 xs:bottom-16 md:bottom-0"><i
+          <div class="lg:text-8xl xs:text-7xl">
+            <span class="inline-block relative lg:left-5 xs:bottom-16 lg:bottom-0"><i
                 class="devicon-php-plain"></i></span>
-            <span class="inline-block relative md:p-2 xs:right-10"><i class="devicon-javascript-plain"></i></span>
-            <span class="inline-block relative md:left-5 xs:bottom-12 md:bottom-0"><i
+            <span class="inline-block relative lg:p-2 xs:right-10"><i class="devicon-javascript-plain"></i></span>
+            <span class="inline-block relative lg:left-5 xs:bottom-12 lg:bottom-0"><i
                 class="devicon-sass-original"></i></span>
-            <span class="inline-block relative md:bottom-12 md:left-6 xs:bottom-4 md:bottom-0"><i
+            <span class="inline-block relative lg:bottom-12 lg:left-6 xs:bottom-4 lg:bottom-0"><i
                 class="devicon-cplusplus-plain"></i></span>
-            <span class="md:p-4"><i class="devicon-angularjs-plain-wordmark md:text-9xl"></i></span>
-            <span class="inline-block relative xs:top-6 md:bottom-0"><i
+            <span class="lg:p-4"><i class="devicon-angularjs-plain-wordmark lg:text-9xl"></i></span>
+            <span class="inline-block relative xs:top-6 lg:bottom-0"><i
                 class="devicon-docker-plain-wordmark"></i></span>
-            <span class="inline-block relative md:left-10  xs:bottom-10 xs:left-2 md:bottom-0"><i
-                class="devicon-kubernetes-plain-wordmark md:text-9xl"></i></span>
-            <span class="inline-block relative md:left-12 xs:top-6 md:top-0"><i
-                class="devicon-go-plain md:text-9xl"></i></span>
-            <span class="inline-block relative md:left-12 xs:top-16 md:top-0"><i
-                class="devicon-objectivec-plain md:text-9xl"></i></span>
-            <span class="inline-block relative md:left-24 xs:top-10 md:top-0"><i
-                class="devicon-ubuntu-plain-wordmark md:text-9xl"></i></span>
-            <span class="inline-block relative md:left-28"><i class="devicon-mongodb-plain-wordmark"></i></span>
-            <span class="inline-block relative md:left-24 md:bottom-20 xs:top-14 md:top-0"><i
+            <span class="inline-block relative lg:left-10  xs:bottom-10 xs:left-2 lg:bottom-0"><i
+                class="devicon-kubernetes-plain-wordmark lg:text-9xl"></i></span>
+            <span class="inline-block relative lg:left-12 xs:top-6 lg:top-0"><i
+                class="devicon-go-plain lg:text-9xl"></i></span>
+            <span class="inline-block relative lg:left-12 xs:top-16 lg:top-0"><i
+                class="devicon-objectivec-plain lg:text-9xl"></i></span>
+            <span class="inline-block relative lg:left-24 xs:top-10 lg:top-0"><i
+                class="devicon-ubuntu-plain-wordmark lg:text-9xl"></i></span>
+            <span class="inline-block relative lg:left-28"><i class="devicon-mongodb-plain-wordmark"></i></span>
+            <span class="inline-block relative lg:left-24 lg:bottom-20 xs:top-14 lg:top-0"><i
                 class="devicon-mysql-plain-wordmark"></i></span>
-            <span class="inline-block relative md:left-32  xs:bottom-28 md:bottom-0"><i
+            <span class="inline-block relative lg:left-32  xs:bottom-28 lg:bottom-0"><i
                 class="devicon-android-plain-wordmark"></i></span>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="flex flex-col md:h-screen justify-between section">
-    <header id="navbar" class="page-container sticky xs:invisible md:visible xs:-my-5">
+  <div class="flex flex-col lg:h-screen justify-between section">
+    <header id="navbar" class="page-container sticky xs:invisible lg:visible xs:-my-5">
       <div class="grid grid-cols-2 home-nav">
         <div class="logo self-center">
           <img width="60%" src="assets/img/logo.svg" />
@@ -369,18 +369,18 @@
         <h1 class="h2 head_color"><strong>Latest Projects</strong></h1>
       </div>
     </main>
-    <div class="grid md:grid-cols-2 xs:p-2 md:p-0">
-      <div class="col-span-1"><img class="img_size xs:h-72 xs:pt-2 md:h-full md:pt-0" src="assets/img/div1.jpg" /></div>
-      <div class="col-span-1"><img class="img_size xs:h-72 xs:pt-2 md:h-full md:pt-0" src="assets/img/div2.jpg" /></div>
-      <div class="col-span-1"><img class="img_size xs:h-72 xs:pt-2 md:h-full md:pt-0" src="assets/img/div2.jpg" /></div>
-      <div class="col-span-1"><img class="img_size xs:h-72 xs:pt-2 md:h-full md:pt-0" src="assets/img/div1.jpg" /></div>
+    <div class="grid lg:grid-cols-2 xs:p-2 lg:p-0">
+      <div class="col-span-1"><img class="img_size xs:h-72 xs:pt-2 lg:h-full lg:pt-0" src="assets/img/div1.jpg" /></div>
+      <div class="col-span-1"><img class="img_size xs:h-72 xs:pt-2 lg:h-full lg:pt-0" src="assets/img/div2.jpg" /></div>
+      <div class="col-span-1"><img class="img_size xs:h-72 xs:pt-2 lg:h-full lg:pt-0" src="assets/img/div2.jpg" /></div>
+      <div class="col-span-1"><img class="img_size xs:h-72 xs:pt-2 lg:h-full lg:pt-0" src="assets/img/div1.jpg" /></div>
 
     </div>
     <footer class="landing-footer"></footer>
   </div>
 
-  <div class="md:flex md:flex-col md:h-screen justify-between section">
-    <header id="navbar" class="page-container sticky xs:invisible md:visible">
+  <div class="lg:flex lg:flex-col lg:h-screen justify-between section">
+    <header id="navbar" class="page-container sticky xs:invisible lg:visible">
       <div class="grid grid-cols-2 home-nav">
         <div class="logo self-center">
           <img width="60%" src="assets/img/logo.svg" />
@@ -401,18 +401,18 @@
       </div>
     </header>
 
-    <div class="grid md:grid-cols-2 gap-1 md:divide-x-4">
-      <div class="col-span-1 md:pl-28">
-        <div class="mid-text xs:pt-8 xs:mx-5">
+    <div class="grid lg:grid-cols-2 gap-1 lg:divide-x-4">
+      <div class="col-span-1 lg:pl-28">
+        <div class="mid-text xs:pt-8 xs:mx-3">
           <h1 class="h2 head_color"><strong>Get a Quote !</strong></h1>
           <h1 class="h2 head_color">or simply say hello !</h1>
         </div>
         <form action="" class="pt-9">
-          <div class="grid md:grid-cols-2 gap-1 md:pt-2">
+          <div class="grid lg:grid-cols-2 gap-1 lg:pt-2">
             <div class="col-span-1">
 
-              <div class="flex md:flex-wrap xs:mx-5 md:-mx-0 md:mb-6">
-                <div class="xs:w-w-screen md:w-2/3  mb-6 md:mb-0">
+              <div class="flex lg:flex-wrap xs:mx-3 lg:-mx-0 lg:mb-6">
+                <div class="xs:w-w-screen lg:w-2/3  mb-6 lg:mb-0">
                   <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                     for="grid-first-name">
                     Name
@@ -424,8 +424,8 @@
                 </div>
 
               </div>
-              <div class="flex md:flex-wrap xs:mx-5 md:-mx-0 md:mb-6">
-                <div class="xs:w-w-screen md:w-2/3  mb-6 md:mb-0">
+              <div class="flex lg:flex-wrap xs:mx-3 lg:-mx-0 lg:mb-6">
+                <div class="xs:w-w-screen lg:w-2/3  mb-6 lg:mb-0">
                   <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
                     Type of Project
                   </label>
@@ -445,8 +445,8 @@
                   </div>
                 </div>
               </div>
-              <div class="flex md:flex-wrap xs:mx-5 md:-mx-0 md:mb-6">
-                <div class="xs:w-w-screen md:w-2/3  mb-6 md:mb-0">
+              <div class="flex lg:flex-wrap xs:mx-3 lg:-mx-0 lg:mb-6">
+                <div class="xs:w-w-screen lg:w-2/3  mb-6 lg:mb-0">
                   <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
                     Example Textarea
                   </label>
@@ -457,8 +457,8 @@
               </div>
             </div>
             <div class="col-span-1">
-              <div class="flex md:flex-wrap xs:mx-5 md:-mx-0 md:mb-6">
-                <div class="xs:w-w-screen md:w-2/3  mb-6 md:mb-0">
+              <div class="flex lg:flex-wrap xs:mx-3 lg:-mx-0 lg:mb-6">
+                <div class="xs:w-w-screen lg:w-2/3  mb-6 lg:mb-0">
                   <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                     for="grid-first-name">
                     Email
@@ -470,8 +470,8 @@
                 </div>
 
               </div>
-              <div class="flex md:flex-wrap xs:mx-5 xs:-my-3 md:-mx-0 md:mb-6">
-                <div class="xs:w-w-screen md:w-2/3  mb-6 md:mb-0">
+              <div class="flex lg:flex-wrap xs:mx-3 xs:-my-3 lg:-mx-0 lg:mb-6">
+                <div class="xs:w-w-screen lg:w-2/3  mb-6 lg:mb-0">
                   <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
                     Business Type
                   </label>
@@ -491,11 +491,11 @@
                   </div>
                 </div>
               </div>
-              <div class="flex md:flex-wrap xs:mx-5 xs:pt-6 md:-mx-0 md:mb-6  md:pt-8  gap-4">
-                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 md:w-2/5  px-4 rounded">
+              <div class="flex lg:flex-wrap xs:mx-3 xs:pt-6 lg:-mx-0 lg:mb-6  lg:pt-8  gap-4">
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 lg:w-2/5  px-4 rounded">
                   Submit
                 </button>
-                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 md:w-2/5 rounded">
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 lg:w-2/5 rounded">
                   Reset
                 </button>
               </div>
@@ -503,9 +503,9 @@
           </div>
         </form>
       </div>
-      <div class="col-span-1 xs:mx-2 pb-2 md:pl-8 pt-4 md:pb-4">
+      <div class="col-span-1 xs:mx-2 pb-2 lg:pl-8 pt-4 lg:pb-4">
         <div class="mapouter">
-          <div class="gmap_canvas"><iframe class="md:w-10/12 xs:w-w-screen h-full" id="gmap_canvas"
+          <div class="gmap_canvas"><iframe class="lg:w-10/12 xs:w-w-screen h-full" id="gmap_canvas"
               src="https://maps.google.com/maps?q=Jabalpur%20&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
               scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://2piratebay.org">pirate
               bay</a><br>
@@ -531,20 +531,20 @@
 
     </div>
     <div class="bg-color h-full">
-      <div class="md:grid md:grid-cols-4  p-12 text-jsutify text-white xs:divide-y  md:divide-x md:divide-y-0 divide-white  ">
-        <div class="xs:mt-2">
-          <h1 class="underline md:text-3xl ml-16">Registered Office</h1>
+      <div class="lg:grid lg:grid-cols-4  p-12 text-jsutify  text-white xs:divide-y  lg:divide-x lg:divide-y-0 divide-white  ">
+        <div class="xs:mt-2 text-center lg:text-jsutify">
+          <h1 class="underline lg:text-3xl ">Registered Office</h1>
 
-          <div class="md:text-2xl mt-5 md:ml-20 xs:ml-16">
+          <div class="lg:text-2xl mt-5 ">
             <p class="mt-1">91, Nehru Nagar</p>
             <p class="mt-1">Oppo. NSCB Medical College</p>
             <p class="mt-1">Jabalpur, 482003</p>
             <p class="mt-1">M.P., India</p>
           </div>
         </div>
-        <div class="xs:mt-2">
-          <h1 class="underline md:text-3xl ml-16 xs:mt-2">Development Office</h1>
-          <div class="md:text-2xl mt-5 md:ml-20 xs:ml-16">
+        <div class="xs:mt-2 text-center lg:text-jsutify">
+          <h1 class="underline lg:text-3xl  xs:mt-2">Development Office</h1>
+          <div class="lg:text-2xl mt-5 ">
             <p class="mt-1">2nd Floor, 269</p>
             <p class="mt-1">Napier Town</p>
             <p class="mt-1">Oppo. Bhawartal Garden</p>
@@ -552,9 +552,9 @@
             <p class="mt-1">M.P., India</p>
           </div>
         </div>
-        <div class="xs:mt-2">
-          <h1 class="underline md:text-3xl ml-16 xs:mt-2">Contact Information</h1>
-          <div class="md:text-2xl mt-5 md:ml-20 xs:ml-16">
+        <div class="xs:mt-2 text-center lg:text-jsutify">
+          <h1 class="underline lg:text-3xl  xs:mt-2">Contact Information</h1>
+          <div class="lg:text-2xl mt-5 ">
             <p class="mt-1">Email:hello@reak.in</p>
             <p class="mt-1">Phone: +91-7647868764</p>
             <p class="mt-1">Extensions:</p>
@@ -563,21 +563,21 @@
             <p class="mt-1">Sales: 501</p>
           </div>
         </div>
-        <div class="text-center xs:mt-2">
-          <h1 class="underline md:text-3xl xs:mt-2">Social Channels</h1>
+        <div class=" text-center xs:mt-2 lg:text-jsutify">
+          <h1 class="underline lg:text-3xl xs:mt-2">Social Channels</h1>
           <div class="grid grid-cols-3 gap-4 mt-8 ">
-            <div class="md:text-6xl xs:text-4xl"><i class="fab fa-facebook-square"></i></div>
-            <div class="md:text-6xl xs:text-4xl"><i class="fab fa-twitter-square"></i></div>
-            <div class="md:text-6xl xs:text-4xl"><i class="fab fa-linkedin"></i></div>
+            <div class="lg:text-6xl text-4xl"><i class="fab fa-facebook-square"></i></div>
+            <div class="lg:text-6xl text-4xl"><i class="fab fa-twitter-square"></i></div>
+            <div class="lg:text-6xl text-4xl"><i class="fab fa-linkedin"></i></div>
           </div>
           <div class="grid grid-cols-3 gap-4 mt-10">
-            <div class="md:text-6xl xs:text-4xl"><i class="fab fa-github-square"></i></div>
-            <div class="md:text-6xl xs:text-4xl"><i class="fab fa-instagram-square"></i></div>
-            <div class="md:text-6xl xs:text-4xl"><i class="fab fa-youtube-square"></i></div>
+            <div class="lg:text-6xl text-4xl"><i class="fab fa-github-square"></i></div>
+            <div class="lg:text-6xl text-4xl"><i class="fab fa-instagram-square"></i></div>
+            <div class="lg:text-6xl text-4xl"><i class="fab fa-youtube-square"></i></div>
           </div>
         </div>
       </div>
-      <h2 class="text-center text-white md:text-4xl xs:text-2xl mb-4 custom-text pb-2"><i>Crafted with <i
+      <h2 class="text-center text-white lg:text-4xl xs:text-2xl mb-4 custom-text pb-2"><i>Crafted with <i
             class="fas fa-heart text-red-600 text-2xl"></i> at <span class="ml-2"> <img  class="position-reak w-20"
               src="assets/img/logo1.svg" /></span></i></h2>
     </div>
