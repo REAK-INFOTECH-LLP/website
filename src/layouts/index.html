@@ -1,393 +1,630 @@
 {{ define "main" }}
-<div class="flex flex-col h-screen justify-between section">
-    <header id="navbar" class="page-container navbar">
-        <div class="grid grid-cols-2 home-nav">
-            <div class="logo self-center">
-                <img width="60%" src="assets/img/logo.svg" />
+<div class="overflow-x-hidden lg:overflow-x-visible">
+  <div class="flex flex-col lg:h-screen justify-between section">
+    <nav class="lg:pt-12">
+      <div class="max-w-full mx-auto px-2 sm:px-6 lg:px-8">
+        <div class="relative flex items-center justify-between h-20 ">
+          <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+            <!-- Mobile menu button-->
+            <button type="button" id="toggle"
+              class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+              aria-controls="mobile-menu" aria-expanded="false">
+
+              <!--
+            Icon when menu is closed.
+
+            Heroicon name: outline/menu
+
+            Menu open: "hidden", Menu closed: "block"
+          -->
+              <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+              <!--
+            Icon when menu is open.
+
+            Heroicon name: outline/x
+
+            Menu open: "block", Menu closed: "hidden"
+          -->
+              <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+          <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start gap-6">
+            <div class="flex-shrink-0 flex items-center">
+              <img class="block lg:hidden h-8 w-auto" src="assets/img/logo.svg" />
+              <img class="hidden lg:block h-32 w-auto" src="assets/img/logo.svg" />
+
             </div>
-            <div class="navbar self-center">
-                <nav class="flex justify-around">
-                    <a class="menu-item" href="#">Home</a>
-                    <div class="divider"></div>
-                    <a class="menu-item" href="#">About</a>
-                    <div class="divider"></div>
-                    <a class="menu-item" href="#">Projects</a>
-                    <div class="divider"></div>
-                    <a class="menu-item" href="#">Careers</a>
-                    <div class="divider"></div>
-                    <a class="menu-item" href="#">Contact</a>
-                </nav>
+            <div class="hidden sm:block sm:ml-6 absolute right-20 pt-6">
+              <div class="flex space-x-6 sm:text-sm lg:text-xl lg:text-3xl text-black lg:pt-4 relative md:bottom-4 sm:bottom-4">
+                <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                <a class="menu-item" href="#">Home</a>
+                <div class="divider"></div>
+                <a class="menu-item" href="#">About</a>
+                <div class="divider"></div>
+                <a class="menu-item" href="#">Projects</a>
+                <div class="divider"></div>
+                <a class="menu-item" href="#">Careers</a>
+                <div class="divider"></div>
+                <a class="menu-item" href="#">Contact</a>
+              </div>
             </div>
+          </div>
+          <!--    <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+        <button class="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+          <span class="sr-only">View notifications</span>
+          Heroicon name: outline/bell 
+          <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+          </svg>
+        </button>
+
+         Profile dropdown 
+        <div class="ml-3 relative">
+          <div>
+            <button type="button" class="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+              <span class="sr-only">Open user menu</span>
+              <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+            </button>
+          </div>
+
+          
+            Dropdown menu, show/hide based on menu state.
+
+            Entering: "transition ease-out duration-100"
+              From: "transform opacity-0 scale-95"
+              To: "transform opacity-100 scale-100"
+            Leaving: "transition ease-in duration-75"
+              From: "transform opacity-100 scale-100"
+              To: "transform opacity-0 scale-95"
+          
+       <div class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
+            
+            <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Your Profile</a>
+            <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a>
+            <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</a>
+          </div>
         </div>
-    </header>
+      </div>-->
+        </div>
+      </div>
+
+      <!-- Mobile menu, show/hide based on menu state. -->
+      <div class="hidden" id="mobile-menu">
+        <div class="px-2 pt-2 pb-3 space-y-1">
+          <a class="menu-item menu-item bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium"
+            href="#">Home</a>
+
+          <a class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+            href="#">About</a>
+
+          <a class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+            href="#">Projects</a>
+
+          <a class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+            href="#">Careers</a>
+
+          <a class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+            href="#">Contact</a>
+        </div>
+      </div>
+    </nav>
     <main class="page-container">
-        <div class="mid-text">
-            <h1 class="h1">We are REAK</h1>
-            <h2 class="h2">We are a premier software development company <br />
-                focusing on bespoke and enterprise software development
-            </h2>
-            <br /><br />
-            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Learn More</button>
-            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Get a Quote</button>
-        </div>
+      <div class="mid-text">
+        <h1 class="h1">We are REAK</h1>
+        <h2 class="h2">We are a premier software development company <br />
+          focusing on bespoke and enterprise software development
+        </h2>
+        <br /><br />
+        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Learn More</button>
+        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Get a Quote</button>
+      </div>
     </main>
     <footer class="landing-footer"></footer>
-</div>
-<div class="flex flex-col h-screen justify-between section">
-  <header id="navbar" class="page-container sticky">
+  </div>
+  <div class="lg:flex lg:flex-col lg:h-screen justify-between section">
+    <header id="navbar" class="page-container sticky invisible lg:visible">
       <div class="grid grid-cols-2 home-nav">
-          <div class="logo self-center">
-              <img width="60%" src="assets/img/logo.svg" />
-          </div>
-          <div class="navbar self-center">
-              <nav class="flex justify-around">
-                  <a class="menu-item" href="#">Home</a>
-                  <div class="divider"></div>
-                  <a class="menu-item" href="#">About</a>
-                  <div class="divider"></div>
-                  <a class="menu-item" href="#">Projects</a>
-                  <div class="divider"></div>
-                  <a class="menu-item" href="#">Careers</a>
-                  <div class="divider"></div>
-                  <a class="menu-item" href="#">Contact</a>
-              </nav>
-          </div>
+        <div class="logo self-center">
+          <img width="60%" src="assets/img/logo.svg" />
+        </div>
+        <div class="navbar self-center">
+          <nav class="flex justify-around">
+            <a class="menu-item" href="#">Home</a>
+            <div class="divider"></div>
+            <a class="menu-item" href="#">About</a>
+            <div class="divider"></div>
+            <a class="menu-item" href="#">Projects</a>
+            <div class="divider"></div>
+            <a class="menu-item" href="#">Careers</a>
+            <div class="divider"></div>
+            <a class="menu-item" href="#">Contact</a>
+          </nav>
+        </div>
       </div>
-  </header>
- 
-  <div class="grid grid-cols-2 gap-1 divide-x-4 ">
-      <div class="col-span-1 pl-28 ">
-          <div class="mid-text">
-              <h1 class="h2 head_color"><strong>Get a Quote !</strong></h1>
-              <h1 class="h2 head_color">or simply say hello !</h1>
-          </div>
-            <form action="" class="pt-9">
-          <div class="grid grid-cols-2 gap-1 pt-2">
-              <div class="col-span-1">
-               
-              <div class="flex flex-wrap -mx-3 mb-6">
-                  <div class="w-full md:w-2/3 px-3 mb-6 md:mb-0">
-                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
-                       Name
-                    </label>
-                    <input class="appearance-none block w-full bg-gray-200 text-gray-700  rounded py-3 px-4 mb-3 leading-tight focus:outline focus:bg-white" id="grid-first-name" type="text" placeholder="Enter Name">
-                   
-                  </div>
-  
+    </header>
+
+    <div class="grid lg:grid-cols-2 gap-1 lg:divide-x-4">
+      <div class="col-span-1 lg:pl-28">
+        <div class="mid-text  xs:mx-3">
+          <h1 class="h2 head_color"><strong>Get a Quote !</strong></h1>
+          <h1 class="h2 head_color">or simply say hello !</h1>
+        </div>
+        <form action="" class="pt-9">
+          <div class="grid lg:grid-cols-2 gap-1 lg:pt-2">
+            <div class="col-span-1">
+
+              <div class="flex lg:flex-wrap xs:mx-3 lg:-mx-0 lg:mb-6">
+                <div class="xs:w-w-screen lg:w-2/3  mb-6 lg:mb-0">
+                  <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                    for="grid-first-name">
+                    Name
+                  </label>
+                  <input
+                    class="appearance-none block w-full bg-gray-200 text-gray-700  rounded py-3 px-4 leading-tight focus:outline focus:bg-white"
+                    id="grid-first-name" type="text" placeholder="Enter Name">
+
                 </div>
-                <div class="flex flex-wrap -mx-3 mb-6">
-                <div class="w-full md:w-2/3 px-3 mb-6 md:mb-0">
+
+              </div>
+              <div class="flex lg:flex-wrap xs:mx-3 lg:-mx-0 lg:mb-6">
+                <div class="xs:w-w-screen lg:w-2/3  mb-6 lg:mb-0">
                   <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
                     Type of Project
                   </label>
                   <div class="relative">
-                    <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
+                    <select
+                      class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                      id="grid-state">
                       <option>Default Select</option>
                       <option>Missouri</option>
                       <option>Texas</option>
                     </select>
                     <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                      <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                      <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                        <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                      </svg>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="flex flex-wrap -mx-3 mb-6">
-                  <div class="w-full md:w-2/3 px-3 mb-6 md:mb-0">
-                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
-                      Example Textarea
-                    </label>
-                    <div class="relative">
-                      <textarea class="resize-y border rounded-md w-full"></textarea>
+              <div class="flex lg:flex-wrap xs:mx-3 lg:-mx-0 lg:mb-6">
+                <div class="xs:w-w-screen lg:w-2/3  mb-6 lg:mb-0">
+                  <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
+                    Example Textarea
+                  </label>
+                  <div class="relative">
+                    <textarea class="resize-y border rounded-md w-full "></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-span-1">
+              <div class="flex lg:flex-wrap xs:mx-3 lg:-mx-0 lg:mb-6">
+                <div class="xs:w-w-screen lg:w-2/3  mb-6 lg:mb-0">
+                  <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                    for="grid-first-name">
+                    Email
+                  </label>
+                  <input
+                    class="appearance-none block w-full bg-gray-200 text-gray-700  rounded py-3 px-4 leading-tight focus:outline focus:bg-white"
+                    id="grid-first-name" type="text" placeholder="Enter Email">
+
+                </div>
+
+              </div>
+
+              <div class="flex lg:flex-wrap xs:mx-3 xs:-my-3 lg:-mx-0 lg:mb-6">
+                <div class="xs:w-w-screen lg:w-2/3  mb-6 lg:mb-0">
+                  <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
+                    Business Type
+                  </label>
+                  <div class="relative">
+                    <select
+                      class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                      id="grid-state">
+                      <option>Default Select</option>
+                      <option>Missouri</option>
+                      <option>Texas</option>
+                    </select>
+                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                      <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                        <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                      </svg>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="col-span-1 ">
-                  
-                  <div class="flex flex-wrap -mx-3 mb-6">
-                      <div class="w-full md:w-2/3 px-3 mb-6 md:mb-0">
-                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
-                           Email
-                        </label>
-                        <input class="appearance-none block w-full bg-gray-200 text-gray-700  rounded py-3 px-4 mb-3 leading-tight focus:outline focus:bg-white" id="grid-first-name" type="text" placeholder="Enter Email">
-                        
-                      </div>
-                      
-                    </div>
-                    <div class="flex flex-wrap -mx-3 mb-6">
-                    <div class="w-full md:w-2/3 px-3 mb-6 md:mb-0">
-                      <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
-                          Business Type
-                      </label>
-                      <div class="relative">
-                        <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
-                          <option>Default Select</option>
-                          <option>Missouri</option>
-                          <option>Texas</option>
-                        </select>
-                        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                          <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
-                        </div>
-                      </div>
-                    </div>
-                    </div>
-                    <div class="flex flex-wrap -mx-3 mb-6 pt-8 pl-4 gap-4">
-                      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                          Submit
-                        </button>
-                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                          Reset
-                        </button>
-                    </div>
+              <div class="flex lg:flex-wrap xs:mx-3 xs:pt-6 lg:-mx-0 lg:mb-6  lg:pt-8  gap-4">
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 lg:w-2/5  px-4 rounded">
+                  Submit
+                </button>
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 lg:w-2/5 rounded">
+                  Reset
+                </button>
               </div>
+            </div>
           </div>
-      </form>
+        </form>
       </div>
-      <div class="col-span-1 pl-2"><div class="mapouter"><div class="gmap_canvas"><iframe width="925" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=Jabalpur%20&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://2piratebay.org">pirate bay</a><br><style>.mapouter{position:relative;text-align:right;height:500px;width:1080px;}</style><a href="https://www.embedgooglemap.net">embedgooglemap.net</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:1030px;}</style></div></div>
+      <div class="col-span-1 xs:mx-3 mb-4 lg:pl-8 pt-4 ">
+        <div class="mapouter">
+          <div class="gmap_canvas"><iframe class="lg:w-10/12 xs:w-w-screen h-full" id="gmap_canvas"
+              src="https://maps.google.com/maps?q=Jabalpur%20&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
+              scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://2piratebay.org">pirate
+              bay</a><br>
+            <style>
+              .mapouter {
+                position: relative;
+                text-align: right;
+                height: 500px;
+                width: 1080px;
+              }
+            </style><a href="https://www.embedgooglemap.net">embedgooglemap.net</a>
+            <style>
+              .gmap_canvas {
+                overflow: hidden;
+                background: none !important;
+                height: 500px;
+                width: 1030px;
+              }
+            </style>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="bg-color h-full ">
+      <div class="w-screen text-white">
+        <div class="text-center pt-2">
+          <h1 class="lg:text-3xl inline-block  border-4 md:text-3xl">Our
+            Partners in Crime</h1>
+        </div>
+        <div class="lg:text-8xl xs:text-4xl xs:pt-2 relative xs:top-7 md:top-0 md:text-6xl">
+          <span class="lg:pl-2  xs:ml-3 md:pl-3"><i class="devicon-html5-plain-wordmark"></i></span>
+          <span class="lg:pl-2  xs:ml-3 md:pl-3"><i class="fab fa-react"></i></span>
+          <span class="lg:pl-2  xs:ml-3 md:pl-3"><i class="devicon-typescript-plain mix-blend-normal"></i></span>
+          <span class="lg:pl-2  xs:ml-3 md:pl-3"><i class="devicon-nodejs-plain-wordmark "></i></span>
+          <span class="lg:pl-2  xs:ml-3 md:pl-3"><i class="devicon-css3-plain-wordmark"></i></span>
+          <span class="lg:pl-2  xs:ml-3 md:pl-3"><i class="devicon-amazonwebservices-plain-wordmark "></i></span>
+          <span class="lg:pl-2  xs:ml-3 md:pl-3"><i class="devicon-git-plain-wordmark"></i></span>
+          <span class="lg:pl-2  xs:ml-3 md:pl-3"><i class="devicon-googlecloud-plain-wordmark "></i></span>
+          <span class="lg:pl-2  xs:ml-3 md:pl-3"><i class="devicon-kotlin-plain-wordmark"></i></span>
+          <span class="lg:pl-2  xs:ml-3 md:pl-3"><i class="devicon-python-plain-wordmark"></i></span>
+          <span class="lg:pl-2  xs:ml-3 md:pl-3"><i class="devicon-vim-plain"></i></span>
+          <span class="lg:pl-2  xs:ml-3 md:pl-3"><i class="devicon-nginx-original"></i></span>
+          <span class="lg:pl-2  xs:ml-3 md:pl-3 xs:invisible lg:visible"><i class="devicon-apple-original"></i></span>
+          
+        </div>
+        <div class="lg:text-8xl xs:text-4xl lg:mt-10 md:text-6xl relative lg:bottom-3"> 
+          <span class="lg:pl-2  xs:ml-4 md:pl-3"><i class="devicon-php-plain"></i></span>
+          <span class="lg:pl-2  xs:ml-4 md:pl-3"><i class="devicon-javascript-plain"></i></span>
+          <span class="lg:pl-2  xs:ml-4 md:pl-3"><i class="devicon-sass-original"></i></span>
+          <span class="lg:pl-2  xs:ml-4 md:pl-3"><i class="devicon-cplusplus-plain"></i></span>
+          <span class="lg:pl-2  xs:ml-4 md:pl-3"><i class="devicon-angularjs-plain-wordmark"></i></span>
+          <span class="lg:pl-2  xs:ml-4 md:pl-3"><i class="devicon-docker-plain-wordmark"></i></span>
+          <span class="lg:pl-2  xs:ml-4 md:pl-3"><i class="devicon-kubernetes-plain-wordmark"></i></span>
+          <span class="lg:pl-2  xs:ml-4 md:pl-3"><i class="devicon-go-plain"></i></span>
+          <span class="lg:pl-2  xs:ml-4 md:pl-3"><i class="devicon-objectivec-plain"></i></span>
+          <span class="lg:pl-2  xs:ml-4 md:pl-3"><i class="devicon-ubuntu-plain-wordmark"></i></span>
+          <span class="lg:pl-2  xs:ml-4 md:pl-3"><i class="devicon-mongodb-plain-wordmark"></i></span>
+          <span class="lg:pl-2  xs:ml-4 md:pl-3"><i class="devicon-mysql-plain-wordmark"></i></span>
+          <span class="lg:pl-2  xs:ml-4 md:pl-3"><i class="devicon-android-plain-wordmark"></i></span>
+          <span class="lg:pl-2  xs:ml-3 md:pl-3 lg:hidden"><i class="devicon-apple-original"></i></span>
+        </div>
+      </div>
+      <!-- <div>
+          <div class="lg:text-8xl xs:text-7xl">
+
+            <span class="inline-block relative lg:left-5 xs:top-28 lg:top-0"><i
+                class="devicon-html5-plain-wordmark"></i></span>
+            <span class="inline-block relative lg:bottom-8 lg:left-5 xs:top-16 lg:top-0"><i
+                class="fab fa-react"></i></span>
+            <span class="inline-block relative lg:top-7 lg:left-8 xs:top-24 lg:top-0 "><i
+                class="devicon-typescript-plain mix-blend-normal"></i></span>
+            <span class="inline-block relative lg:left-12 xs:top-16 lg:top-0 "><i
+                class="devicon-nodejs-plain-wordmark "></i></span>
+            <span class="inline-block relative lg:left-12 xs:top-14 xs:left-72 lg:top-0"><i
+                class="devicon-css3-plain-wordmark"></i></span>
+            <span class="inline-block relative lg:left-12 xs:top-16 lg:top-0"><i
+                class="devicon-amazonwebservices-plain-wordmark "></i></span>
+            <h1 class="text-3xl inline-block relative lg:bottom-20 lg:left-24 border-4 h-12 xs:bottom-40 xs:left-6">Our
+              Partners in Crime</h1>
+            <span class="inline-block relative lg:right-60 xs:bottom-16 lg:bottom-0"><i
+                class="devicon-git-plain-wordmark"></i></span>
+            <span class="inline-block relative lg:right-52 top-2"><i
+                class="devicon-googlecloud-plain-wordmark "></i></span>
+            <span class="inline-block relative lg:right-48 xs:bottom-16 lg:bottom-0"><i
+                class="devicon-kotlin-plain-wordmark"></i></span>
+            <span class="inline-block relative lg:right-40 xs:top-4 lg:top-0"><i
+                class="devicon-python-plain-wordmark lg:text-9xl"></i></span>
+            <span class="inline-block relative lg:right-32 xs:bottom-16 lg:bottom-0"><i
+                class="devicon-vim-plain lg:text-9xl"></i></span>
+            <span class="inline-block relative lg:right-20 lg:bottom-8"><i class="devicon-nginx-original"></i></span>
+            <span class="inline-block xs:relative  lg:absolute lg:right-4  "><i class="devicon-apple-original"></i></span>
+          </div>
+          <div class="lg:text-8xl xs:text-7xl">
+            <span class="inline-block relative lg:left-5 xs:bottom-16 lg:bottom-0"><i
+                class="devicon-php-plain"></i></span>
+            <span class="inline-block relative lg:p-2 xs:right-10 lg:left-4"><i class="devicon-javascript-plain"></i></span>
+            <span class="inline-block relative lg:left-5 xs:bottom-40 lg:bottom-0"><i
+                class="devicon-sass-original"></i></span>
+            <span class="inline-block relative lg:bottom-12 lg:left-6 xs:bottom-4 lg:bottom-0"><i
+                class="devicon-cplusplus-plain"></i></span>
+            <span class="lg:p-4"><i class="devicon-angularjs-plain-wordmark lg:text-9xl"></i></span>
+            <span class="inline-block relative xs:top-6 lg:bottom-0"><i
+                class="devicon-docker-plain-wordmark"></i></span>
+            <span class="inline-block relative lg:left-10  xs:bottom-10 xs:left-2 lg:bottom-0"><i
+                class="devicon-kubernetes-plain-wordmark lg:text-9xl"></i></span>
+            <span class="inline-block relative lg:left-12 xs:top-6 lg:top-0"><i
+                class="devicon-go-plain lg:text-9xl"></i></span>
+            <span class="inline-block relative lg:left-12 xs:top-16 lg:top-0"><i
+                class="devicon-objectivec-plain lg:text-9xl"></i></span>
+            <span class="inline-block relative lg:left-24 xs:top-10 lg:top-0"><i
+                class="devicon-ubuntu-plain-wordmark lg:text-9xl"></i></span>
+            <span class="inline-block relative lg:left-28"><i class="devicon-mongodb-plain-wordmark"></i></span>
+            <span class="inline-block relative lg:left-24 lg:bottom-20 xs:top-14 lg:top-0"><i
+                class="devicon-mysql-plain-wordmark"></i></span>
+            <span class="inline-block relative lg:left-32  xs:bottom-28 lg:bottom-0"><i
+                class="devicon-android-plain-wordmark"></i></span>
+          </div>
+        </div> -->
+
+    </div>
+  </div>
+  <div class="flex flex-col lg:h-screen  section">
+    <header id="navbar" class="page-container sticky xs:invisible lg:visible xs:-my-5">
+      <div class="grid grid-cols-2 home-nav">
+        <div class="logo self-center">
+          <img width="60%" src="assets/img/logo.svg" />
+        </div>
+        <div class="navbar self-center">
+          <nav class="flex justify-around">
+            <a class="menu-item" href="#">Home</a>
+            <div class="divider"></div>
+            <a class="menu-item" href="#">About</a>
+            <div class="divider"></div>
+            <a class="menu-item" href="#">Projects</a>
+            <div class="divider"></div>
+            <a class="menu-item" href="#">Careers</a>
+            <div class="divider"></div>
+            <a class="menu-item" href="#">Contact</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <main class="page-container sticky_one">
+      <div class="mid-text">
+        <h1 class="h2 head_color lg:mt-4"><strong>Latest Projects</strong></h1>
+      </div>
+    </main>
+    <div class="grid lg:grid-cols-2 xs:p-2 lg:p-0">
+      <div class="col-span-1"><img class="img_size xs:h-72 xs:pt-2 lg:h-full lg:pt-0" src="assets/img/div1.jpg" /></div>
+      <div class="col-span-1"><img class="img_size xs:h-72 xs:pt-2 lg:h-full lg:pt-0" src="assets/img/div2.jpg" /></div>
+      <div class="col-span-1"><img class="img_size xs:h-72 xs:pt-2 lg:h-full lg:pt-0" src="assets/img/div2.jpg" /></div>
+      <div class="col-span-1"><img class="img_size xs:h-72 xs:pt-2 lg:h-full lg:pt-0" src="assets/img/div1.jpg" /></div>
+
+    </div>
+    <footer class="landing-footer"></footer>
+  </div>
+
+  <div class="lg:flex lg:flex-col lg:h-screen justify-between section">
+    <header id="navbar" class="page-container sticky xs:invisible lg:visible">
+      <div class="grid grid-cols-2 home-nav">
+        <div class="logo self-center">
+          <img width="60%" src="assets/img/logo.svg" />
+        </div>
+        <div class="navbar self-center">
+          <nav class="flex justify-around">
+            <a class="menu-item" href="#">Home</a>
+            <div class="divider"></div>
+            <a class="menu-item" href="#">About</a>
+            <div class="divider"></div>
+            <a class="menu-item" href="#">Projects</a>
+            <div class="divider"></div>
+            <a class="menu-item" href="#">Careers</a>
+            <div class="divider"></div>
+            <a class="menu-item" href="#">Contact</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <div class="grid lg:grid-cols-2 gap-1 lg:divide-x-4">
+      <div class="col-span-1 lg:pl-28">
+        <div class="mid-text xs:pt-8 xs:mx-3">
+          <h1 class="h2 head_color"><strong>Get a Quote !</strong></h1>
+          <h1 class="h2 head_color">or simply say hello !</h1>
+        </div>
+        <form action="" class="pt-9">
+          <div class="grid lg:grid-cols-2 gap-1 lg:pt-2">
+            <div class="col-span-1">
+
+              <div class="flex lg:flex-wrap xs:mx-3 lg:-mx-0 lg:mb-6">
+                <div class="xs:w-w-screen lg:w-2/3  mb-6 lg:mb-0">
+                  <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                    for="grid-first-name">
+                    Name
+                  </label>
+                  <input
+                    class="appearance-none block w-full bg-gray-200 text-gray-700  rounded py-3 px-4 leading-tight focus:outline focus:bg-white"
+                    id="grid-first-name" type="text" placeholder="Enter Name">
+
+                </div>
+
+              </div>
+              <div class="flex lg:flex-wrap xs:mx-3 lg:-mx-0 lg:mb-6">
+                <div class="xs:w-w-screen lg:w-2/3  mb-6 lg:mb-0">
+                  <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
+                    Type of Project
+                  </label>
+                  <div class="relative">
+                    <select
+                      class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                      id="grid-state">
+                      <option>Default Select</option>
+                      <option>Missouri</option>
+                      <option>Texas</option>
+                    </select>
+                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                      <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                        <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="flex lg:flex-wrap xs:mx-3 lg:-mx-0 lg:mb-6">
+                <div class="xs:w-w-screen lg:w-2/3  mb-6 lg:mb-0">
+                  <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
+                    Example Textarea
+                  </label>
+                  <div class="relative">
+                    <textarea class="resize-y border rounded-md w-full "></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-span-1">
+              <div class="flex lg:flex-wrap xs:mx-3 lg:-mx-0 lg:mb-6">
+                <div class="xs:w-w-screen lg:w-2/3  mb-6 lg:mb-0">
+                  <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                    for="grid-first-name">
+                    Email
+                  </label>
+                  <input
+                    class="appearance-none block w-full bg-gray-200 text-gray-700  rounded py-3 px-4 leading-tight focus:outline focus:bg-white"
+                    id="grid-first-name" type="text" placeholder="Enter Email">
+
+                </div>
+
+              </div>
+              <div class="flex lg:flex-wrap xs:mx-3 xs:-my-3 lg:-mx-0 lg:mb-6">
+                <div class="xs:w-w-screen lg:w-2/3  mb-6 lg:mb-0">
+                  <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
+                    Business Type
+                  </label>
+                  <div class="relative">
+                    <select
+                      class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                      id="grid-state">
+                      <option>Default Select</option>
+                      <option>Missouri</option>
+                      <option>Texas</option>
+                    </select>
+                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                      <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                        <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="flex lg:flex-wrap xs:mx-3 xs:pt-6 lg:-mx-0 lg:mb-6  lg:pt-8  gap-4">
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 lg:w-2/5  px-4 rounded">
+                  Submit
+                </button>
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 lg:w-2/5 rounded">
+                  Reset
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="col-span-1 xs:mx-2 pb-2 lg:pl-8 pt-4 lg:pb-4">
+        <div class="mapouter">
+          <div class="gmap_canvas"><iframe class="lg:w-10/12 xs:w-w-screen h-full" id="gmap_canvas"
+              src="https://maps.google.com/maps?q=Jabalpur%20&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
+              scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://2piratebay.org">pirate
+              bay</a><br>
+            <style>
+              .mapouter {
+                position: relative;
+                text-align: right;
+                height: 500px;
+                width: 1080px;
+              }
+            </style><a href="https://www.embedgooglemap.net">embedgooglemap.net</a>
+            <style>
+              .gmap_canvas {
+                overflow: hidden;
+                background: none !important;
+                height: 500px;
+                width: 1030px;
+              }
+            </style>
+          </div>
+        </div>
       </div>
 
     </div>
     <div class="bg-color h-full">
-      <div class="text-white">
-        <div>
-            
-            
-            
-              <div class="text-8xl">
-                
-                <span class="inline-block relative  left-5"><i class="devicon-html5-plain-wordmark"></i></span>
-                <span class="inline-block relative bottom-8 left-5"><i class="fab fa-react"></i></span>
-                <span class="inline-block relative top-7 left-8"><i class="devicon-typescript-plain mix-blend-normal"></i></span>
-                <span class="inline-block relative  left-12"><i class="devicon-nodejs-plain-wordmark "></i></span>
-                <span class="inline-block relative  left-12"><i class="devicon-css3-plain-wordmark"></i></span>
-                <span class="inline-block relative left-12"><i class="devicon-amazonwebservices-plain-wordmark "></i></span>
-                <h1 class="text-3xl  inline-block relative bottom-20 left-24 border-4 h-12">Our Partners in Crime</h1>
-                <span class="inline-block relative right-60"><i class="devicon-git-plain-wordmark"></i></span>
-                <span class="inline-block relative right-52 top-2"><i class="devicon-googlecloud-plain-wordmark "></i></span>
-                <span class="inline-block relative right-48"><i class="devicon-kotlin-plain-wordmark"></i></span>
-                <span class="inline-block relative right-40"><i class="devicon-python-plain-wordmark text-9xl"></i></span>
-                <span class="inline-block relative right-32"><i class="devicon-vim-plain text-9xl"></i></span>
-                <span class="inline-block relative right-24 bottom-8"><i class="devicon-nginx-original"></i></span>
-                <span class="inline-block relative right-12"><i class="devicon-apple-original"></i></span>
-              </div>
-              <div class="text-8xl">
-                <span class="inline-block relative  left-5"><i class="devicon-php-plain"></i></span>
-                <span class="p-2 "><i class="devicon-javascript-plain"></i></span>
-                <span class="inline-block relative  left-5"><i class="devicon-sass-original"></i></span>
-                <span class="inline-block relative bottom-12 left-6"><i class="devicon-cplusplus-plain"></i></span>
-                <span  class="p-4"><i class="devicon-angularjs-plain-wordmark text-9xl"></i></span>
-                <span class="inline-block relative"><i class="devicon-docker-plain-wordmark"></i></span>
-                <span class="inline-block relative left-10"><i class="devicon-kubernetes-plain-wordmark text-9xl"></i></span>
-                <span class="inline-block relative left-12"><i class="devicon-go-plain text-9xl"></i></span>
-                <span class="inline-block relative left-12"><i class="devicon-objectivec-plain text-9xl"></i></span>
-                <span class="inline-block relative left-24"><i class="devicon-ubuntu-plain-wordmark text-9xl"></i></span>
-                <span class="inline-block relative left-28"><i class="devicon-mongodb-plain-wordmark"></i></span>
-                <span class="inline-block relative left-24 bottom-20"><i class="devicon-mysql-plain-wordmark"></i></span>
-                <span class="inline-block relative left-32"><i class="devicon-android-plain-wordmark"></i></span>
-                
-                
+      <div
+        class="lg:grid lg:grid-cols-4  p-12 text-jsutify  text-white xs:divide-y  lg:divide-x lg:divide-y-0 divide-white  ">
+        <div class="xs:mt-2 text-center lg:text-jsutify">
+          <h1 class="underline lg:text-3xl ">Registered Office</h1>
 
-              
-              </div>
-            
+          <div class="lg:text-2xl mt-5 ">
+            <p class="mt-1">91, Nehru Nagar</p>
+            <p class="mt-1">Oppo. NSCB Medical College</p>
+            <p class="mt-1">Jabalpur, 482003</p>
+            <p class="mt-1">M.P., India</p>
+          </div>
         </div>
-       
-   </div>
-<div class="flex flex-col h-screen justify-between section">
-    <header id="navbar" class="page-container sticky">
-        <div class="grid grid-cols-2 home-nav">
-            <div class="logo self-center">
-                <img width="60%" src="assets/img/logo.svg" />
-            </div>
-            <div class="navbar self-center">
-                <nav class="flex justify-around">
-                    <a class="menu-item" href="#">Home</a>
-                    <div class="divider"></div>
-                    <a class="menu-item" href="#">About</a>
-                    <div class="divider"></div>
-                    <a class="menu-item" href="#">Projects</a>
-                    <div class="divider"></div>
-                    <a class="menu-item" href="#">Careers</a>
-                    <div class="divider"></div>
-                    <a class="menu-item" href="#">Contact</a>
-                </nav>
-            </div>
+        <div class="xs:mt-2 text-center lg:text-jsutify">
+          <h1 class="underline lg:text-3xl  xs:mt-2">Development Office</h1>
+          <div class="lg:text-2xl mt-5 ">
+            <p class="mt-1">2nd Floor, 269</p>
+            <p class="mt-1">Napier Town</p>
+            <p class="mt-1">Oppo. Bhawartal Garden</p>
+            <p class="mt-1">Jabalpur, 482001</p>
+            <p class="mt-1">M.P., India</p>
+          </div>
         </div>
-    </header>
-    <main class="page-container sticky_one">
-        <div class="mid-text">
-            <h1 class="h2 head_color"><strong>Latest Projects</strong></h1>
+        <div class="xs:mt-2 text-center lg:text-jsutify">
+          <h1 class="underline lg:text-3xl  xs:mt-2">Contact Information</h1>
+          <div class="lg:text-2xl mt-5 ">
+            <p class="mt-1">Email:hello@reak.in</p>
+            <p class="mt-1">Phone: +91-7647868764</p>
+            <p class="mt-1">Extensions:</p>
+            <p class="mt-1">Administration: 1001</p>
+            <p class="mt-1">Support: 2001</p>
+            <p class="mt-1">Sales: 501</p>
+          </div>
         </div>
-    </main>
-    <div class="grid grid-cols-2 ">
-        <div class="col-span-1"><img  class="img_size" src="assets/img/div1.jpg" /></div>
-        <div class="col-span-1"><img  class="img_size" src="assets/img/div2.jpg" /></div>
-        <div class="col-span-1"><img  class="img_size" src="assets/img/div2.jpg" /></div>
-        <div class="col-span-1"><img  class="img_size" src="assets/img/div1.jpg" /></div>
-
+        <div class=" text-center xs:mt-2 lg:text-jsutify">
+          <h1 class="underline lg:text-3xl xs:mt-2">Social Channels</h1>
+          <div class="grid grid-cols-3 gap-4 mt-8 ">
+            <div class="lg:text-6xl text-4xl"><i class="fab fa-facebook-square"></i></div>
+            <div class="lg:text-6xl text-4xl"><i class="fab fa-twitter-square"></i></div>
+            <div class="lg:text-6xl text-4xl"><i class="fab fa-linkedin"></i></div>
+          </div>
+          <div class="grid grid-cols-3 gap-4 mt-10">
+            <div class="lg:text-6xl text-4xl"><i class="fab fa-github-square"></i></div>
+            <div class="lg:text-6xl text-4xl"><i class="fab fa-instagram-square"></i></div>
+            <div class="lg:text-6xl text-4xl"><i class="fab fa-youtube-square"></i></div>
+          </div>
+        </div>
       </div>
+      <h2 class="text-center text-white lg:text-4xl xs:text-2xl mb-4 custom-text pb-2"><i>Crafted with <i
+            class="fas fa-heart text-red-600 text-2xl"></i> at <span class="ml-2"> <img class="position-reak w-20"
+              src="assets/img/logo1.svg" /></span></i></h2>
+    </div>
     <footer class="landing-footer"></footer>
+  </div>
 </div>
-<div class="flex flex-col h-screen justify-between section">
-    <header id="navbar" class="page-container sticky">
-        <div class="grid grid-cols-2 home-nav">
-            <div class="logo self-center">
-                <img width="60%" src="assets/img/logo.svg" />
-            </div>
-            <div class="navbar self-center">
-                <nav class="flex justify-around">
-                    <a class="menu-item" href="#">Home</a>
-                    <div class="divider"></div>
-                    <a class="menu-item" href="#">About</a>
-                    <div class="divider"></div>
-                    <a class="menu-item" href="#">Projects</a>
-                    <div class="divider"></div>
-                    <a class="menu-item" href="#">Careers</a>
-                    <div class="divider"></div>
-                    <a class="menu-item" href="#">Contact</a>
-                </nav>
-            </div>
-        </div>
-    </header>
-   
-    <div class="grid grid-cols-2 gap-1 divide-x-4 ">
-        <div class="col-span-1 pl-28 ">
-            <div class="mid-text">
-                <h1 class="h2 head_color"><strong>Get a Quote !</strong></h1>
-                <h1 class="h2 head_color">or simply say hello !</h1>
-            </div>
-              <form action="" class="pt-9">
-            <div class="grid grid-cols-2 gap-1 pt-2">
-                <div class="col-span-1">
-                 
-                <div class="flex flex-wrap -mx-3 mb-6">
-                    <div class="w-full md:w-2/3 px-3 mb-6 md:mb-0">
-                      <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
-                         Name
-                      </label>
-                      <input class="appearance-none block w-full bg-gray-200 text-gray-700  rounded py-3 px-4 mb-3 leading-tight focus:outline focus:bg-white" id="grid-first-name" type="text" placeholder="Enter Name">
-                     
-                    </div>
-    
-                  </div>
-                  <div class="flex flex-wrap -mx-3 mb-6">
-                  <div class="w-full md:w-2/3 px-3 mb-6 md:mb-0">
-                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
-                      Type of Project
-                    </label>
-                    <div class="relative">
-                      <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
-                        <option>Default Select</option>
-                        <option>Missouri</option>
-                        <option>Texas</option>
-                      </select>
-                      <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="flex flex-wrap -mx-3 mb-6">
-                    <div class="w-full md:w-2/3 px-3 mb-6 md:mb-0">
-                      <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
-                        Example Textarea
-                      </label>
-                      <div class="relative">
-                        <textarea class="resize-y border rounded-md w-full"></textarea>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-span-1 ">
-                    
-                    <div class="flex flex-wrap -mx-3 mb-6">
-                        <div class="w-full md:w-2/3 px-3 mb-6 md:mb-0">
-                          <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
-                             Email
-                          </label>
-                          <input class="appearance-none block w-full bg-gray-200 text-gray-700  rounded py-3 px-4 mb-3 leading-tight focus:outline focus:bg-white" id="grid-first-name" type="text" placeholder="Enter Email">
-                          
-                        </div>
-                        
-                      </div>
-                      <div class="flex flex-wrap -mx-3 mb-6">
-                      <div class="w-full md:w-2/3 px-3 mb-6 md:mb-0">
-                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
-                            Business Type
-                        </label>
-                        <div class="relative">
-                          <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
-                            <option>Default Select</option>
-                            <option>Missouri</option>
-                            <option>Texas</option>
-                          </select>
-                          <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
-                          </div>
-                        </div>
-                      </div>
-                      </div>
-                      <div class="flex flex-wrap -mx-3 mb-6 pt-8 pl-4 gap-4">
-                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                            Submit
-                          </button>
-                          <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                            Reset
-                          </button>
-                      </div>
-                </div>
-            </div>
-        </form>
-        </div>
-        <div class="col-span-1 pl-2"><div class="mapouter"><div class="gmap_canvas"><iframe width="925" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=Jabalpur%20&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://2piratebay.org">pirate bay</a><br><style>.mapouter{position:relative;text-align:right;height:500px;width:1080px;}</style><a href="https://www.embedgooglemap.net">embedgooglemap.net</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:1030px;}</style></div></div>
-        </div>
-
-      </div>
-      <div class="bg-color h-full">
-        <div class="grid grid-cols-4  p-12 text-jsutify text-white  divide-x divide-white">
-            <div>
-                <h1 class="underline text-3xl ml-16">Registered Office</h1>
-                
-                <div class="text-2xl mt-5 ml-20">
-                   <p class="mt-1">91, Nehru Nagar</p>
-                   <p class="mt-1">Oppo. NSCB Medical College</p>
-                   <p class="mt-1">Jabalpur, 482003</p>
-                   <p class="mt-1">M.P., India</p>
-                </div>
-            </div>
-            <div> <h1 class="underline text-3xl ml-16">Development Office</h1>
-                <div class="text-2xl mt-5 ml-20">
-                    <p class="mt-1">2nd Floor, 269</p>
-                    <p class="mt-1">Napier Town</p>
-                    <p class="mt-1">Oppo. Bhawartal Garden</p>
-                    <p class="mt-1">Jabalpur, 482001</p>
-                    <p class="mt-1">M.P., India</p>
-                 </div></div>
-            <div><h1 class="underline text-3xl ml-16">Contact Information</h1>
-                <div class="text-2xl mt-5  ml-20">
-                    <p class="mt-1">Email:hello@reak.in</p>
-                    <p class="mt-1">Phone: +91-7647868764</p>
-                    <p class="mt-1">Extensions:</p>
-                    <p class="mt-1">Administration: 1001</p>
-                    <p class="mt-1">Support: 2001</p>
-                    <p class="mt-1">Sales: 501</p>
-                 </div></div>
-            <div class="text-center"><h1 class="underline text-3xl">Social Channels</h1>
-                <div class="grid grid-cols-3 gap-4 mt-8 ">
-                  <div class="text-6xl"><i class="fab fa-facebook-square"></i></div>
-                  <div class="text-6xl"><i class="fab fa-twitter-square"></i></div>
-                  <div class="text-6xl"><i class="fab fa-linkedin"></i></div>
-                  </div>
-                  <div class="grid grid-cols-3 gap-4 mt-10">
-                    <div class="text-6xl"><i class="fab fa-github-square"></i></div>
-                    <div class="text-6xl"><i class="fab fa-instagram-square"></i></div>
-                    <div class="text-6xl"><i class="fab fa-youtube-square"></i></div>
-                  </div>
-                </div>
-          </div> 
-          <h2 class="text-center text-white text-4xl mb-4 custom-text"><i>Crafted with <i class="fas fa-heart text-red-600 text-2xl"></i> at <span class="ml-2"> <img width="6%" class="position-reak" src="assets/img/logo1.svg" /></span></i></h2>
-       </div>
-    <footer class="landing-footer"></footer>
-</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script>
+  $("#toggle").click(function () {
+    $(this).toggleClass("on");
+    $("#mobile-menu").slideToggle();
+  });
+</script>
 {{ end }}
